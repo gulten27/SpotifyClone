@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "922343216107",
+    "project_id": "spotifyclone-bebab",
+    "storage_bucket": "spotifyclone-bebab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:922343216107:android:564fcf362d1c461d753fae",
+        "android_client_info": {
+          "package_name": "com.plcoding.spotifycloneyt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "922343216107-3lrb8un9ssa4v90k1hckill7l3hut24g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXYkKetnoB6jEDdybuR48nMtH9VNK7eGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "922343216107-3lrb8un9ssa4v90k1hckill7l3hut24g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
