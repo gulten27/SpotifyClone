@@ -4,7 +4,6 @@ import android.app.PendingIntent
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
-import android.media.session.MediaController
 import android.support.v4.media.session.MediaControllerCompat
 import android.support.v4.media.session.MediaSessionCompat
 import com.bumptech.glide.Glide
@@ -22,6 +21,7 @@ class MusicNotificationManager(
     notificationListener: PlayerNotificationManager.NotificationListener,
     private val newSongCallback: () -> Unit
 ) {
+
     private val notificationManager: PlayerNotificationManager
 
     init {
@@ -40,13 +40,14 @@ class MusicNotificationManager(
         }
     }
 
-    fun showNotification(player: Player){
+    fun showNotification(player: Player) {
         notificationManager.setPlayer(player)
     }
 
     private inner class DescriptionAdapter(
         private val mediaController: MediaControllerCompat
-    ) : PlayerNotificationManager.MediaDescriptionAdapter{
+    ) : PlayerNotificationManager.MediaDescriptionAdapter {
+
         override fun getCurrentContentTitle(player: Player): CharSequence {
             return mediaController.metadata.description.title.toString()
         }
@@ -65,7 +66,7 @@ class MusicNotificationManager(
         ): Bitmap? {
             Glide.with(context).asBitmap()
                 .load(mediaController.metadata.description.iconUri)
-                .into(object : CustomTarget<Bitmap>(){
+                .into(object : CustomTarget<Bitmap>() {
                     override fun onResourceReady(
                         resource: Bitmap,
                         transition: Transition<in Bitmap>?
@@ -75,9 +76,7 @@ class MusicNotificationManager(
 
                     override fun onLoadCleared(placeholder: Drawable?) = Unit
                 })
-
             return null
         }
-
     }
 }

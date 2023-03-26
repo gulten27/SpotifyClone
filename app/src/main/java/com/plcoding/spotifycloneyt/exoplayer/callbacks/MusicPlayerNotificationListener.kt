@@ -9,7 +9,7 @@ import com.plcoding.spotifycloneyt.other.Constants.NOTIFICATION_ID
 
 class MusicPlayerNotificationListener(
     private val musicService: MusicService
-): PlayerNotificationManager.NotificationListener {
+) : PlayerNotificationManager.NotificationListener {
 
     override fun onNotificationCancelled(notificationId: Int, dismissedByUser: Boolean) {
         super.onNotificationCancelled(notificationId, dismissedByUser)
@@ -27,7 +27,7 @@ class MusicPlayerNotificationListener(
     ) {
         super.onNotificationPosted(notificationId, notification, ongoing)
         musicService.apply {
-            if(ongoing && isForegroundService){
+            if(ongoing && !isForegroundService) {
                 ContextCompat.startForegroundService(
                     this,
                     Intent(applicationContext, this::class.java)
